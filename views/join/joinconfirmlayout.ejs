@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SWETING-AI</title>
+    <link rel="icon" href="/images/favicon.svg">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/fonts/NotoSansCJKkr-Medium.otf">
+    <style>
+        .container-form {
+            margin-top: 50px;
+        }
+
+        .form-control {
+            background: #f5f6ff;
+            border: none;
+            border-bottom: 1px solid #dcdfee;
+            border-radius: 4px;
+            padding: 12px 16px;
+            outline: none;
+            resize: vertical;
+            color: #242e64;
+            font-size: 1rem;
+            line-height: 1.75;
+            vertical-align: middle;
+            transition: border-color .2s ease-in-out, background .2s ease-in-out;
+        }
+
+        .profileImg {
+            border: 1px solid #dcdfee;
+            background: #fff;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            box-sizing: border-box;
+        }
+
+        .sweator-joinbox {}
+
+        .sweatorback {
+            align-items: center;
+            background: #f5f6ff;
+            background-image: url(/images/joincomplete.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            padding: 0 0 100px;
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .button-border {
+            margin: 16px 0 0;
+            padding: 0 16px;
+            height: 48px;
+            box-sizing: border-box;
+            background: #fff;
+            border: 1px solid #dcdfee;
+            border-radius: 4px;
+        }
+
+        .info {
+            margin: 0 0 8px;
+            color: #656c92;
+            font-size: 16px;
+            line-height: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container col-md-6 container-form">
+        <%- body %>
+    </div>
+
+</body>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.bundle.min.js"></script>
+
+</html>

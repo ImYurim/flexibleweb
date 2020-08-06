@@ -1,0 +1,165 @@
+<div class="content"><div class="contenttitle"><div class="jointitle1">회원가입</div> <div class="line">|</div><div class="jointitle2">Join</div></div>
+<div class="hello">스웨팅에 오신 것을 환영합니다.</div>
+<form action="/user/join" onsubmit="return Validation()" method="POST" >
+  <div class="form-group">
+    <label class="label-name">아이디 (이메일)</label>
+    <input type="email" name="user_id" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+      placeholder="ex) coderlee@codingrobotlab.com">
+    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+  </div>
+  <div class="form-group">
+    <label class="label-name">비밀번호</label>
+    <input type="password" required="required" name="password" class="form-control" id="inputPassword" placeholder="숫자 + 영문 6자 이상">
+  </div>
+  <div class="form-group">
+    <label class="label-name">비밀번호 확인</label>
+    <input type="password" required="required" class="form-control" id="inputPasswordcheck" placeholder="숫자 + 영문 6자 이상">
+  </div>
+  <div class="form-group">
+    <label class="label-name">이름</label>
+    <input type="text" required="required" name="nickname" class="form-control" id="inputName" aria-describedby="emailHelp"
+      placeholder="중복되지 않는 닉네임(2글자 이상)">
+    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" required="required" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <div class="label-name">태어난 해</div>
+  <select class="form-control" id="inputBirth">
+    <option>2020</option>
+    <option>2019</option>
+    <option>2018</option>
+    <option>2017</option>
+    <option>2016</option>
+    <option>2015</option>
+    <option>2014</option>
+    <option>2013</option>
+    <option>2012</option>
+    <option>2011</option>
+    <option>2010</option>
+    <option>2009</option>
+    <option>2008</option>
+    <option>2007</option>
+    <option>2006</option>
+    <option>2005</option>
+    <option>2004</option>
+    <option>2003</option>
+    <option>2002</option>
+    <option>2001</option>
+    <option>2000</option>
+    <option>1999</option>
+    <option>1998</option>
+    <option>1997</option>
+    <option>1996</option>
+    <option>1995</option>
+    <option>1994</option>
+    <option>1993</option>
+    <option>1992</option>
+    <option>1991</option>
+    <option>1990</option>
+    <option>1989</option>
+    <option>1988</option>
+    <option>1987</option>
+    <option>1986</option>
+    <option>1985</option>
+    <option>1984</option>
+    <option>1983</option>
+    <option>1982</option>
+    <option>1981</option>
+    <option>1980</option>
+    <option>1979</option>
+    <option>1978</option>
+    <option>1977</option>
+    <option>1976</option>
+    <option>1975</option>
+    <option>1974</option>
+    <option>1973</option>
+    <option>1972</option>
+    <option>1971</option>
+    <option>1970</option>
+    <option>1969</option>
+    <option>1968</option>
+    <option>1967</option>
+    <option>1966</option>
+    <option>1965</option>
+    <option>1964</option>
+    <option>1963</option>
+    <option>1962</option>
+    <option>1961</option>
+    <option>1960</option>
+    <option>1959</option>
+    <option>1958</option>
+    <option>1957</option>
+    <option>1956</option>
+    <option>1955</option>
+    <option>1954</option>
+    <option>1953</option>
+    <option>1952</option>
+    <option>1951</option>
+    <option>1950</option>
+    <option>1949</option>
+    <option>1948</option>
+    <option>1947</option>
+    <option>1946</option>
+    <option>1945</option>
+    <option>1944</option>
+    <option>1943</option>
+    <option>1942</option>
+    <option>1941</option>
+    <option>1940</option>
+  </select>
+  <div class="form-group">
+    <label class="label-name">성별</label>
+    <div class="row">
+      <div class="form-check" id="checkboxsex">
+        <input class="form-check-input" type="radio" name="sex" id="sex" value="female">
+        <label class="form-check-label" for="sex">
+          여성
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="sex" id="sex" value="male">
+        <label class="form-check-label" for="sex">
+          남성
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="label-name">휴대폰</label>
+    <div class="row" id="inputphonenum">
+      <input type="text" required="required" name="phonenum" class="form-control-half" placeholder="010-1111-1111">
+      <button class="sendandconfirmbutton">인증번호 발송</button>
+    </div>
+    <div class="row">
+      <input type="text"  class="form-control-half" placeholder="인증번호">
+      <button class="sendandconfirmbutton">인증받기</button>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="label-name">약관동의</label>
+    <div class="sweator-joinbox">
+      <div class="form-check-inline">
+        <input class="form-check-input check-all" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          전체동의
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <input class="form-check-input ab" type="checkbox" value="" id="defaultCheck2">
+        <label class="form-check-label" for="defaultCheck2">
+          스웨팅 이용약관(필수)
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <input class="form-check-input ab" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          개인정보 취급방침(필수)
+        </label>
+      </div>
+    </div>
+  </div>
+  <button class="joinbutton" type="submit">회원 가입하기</button>
+</form>
+</div>

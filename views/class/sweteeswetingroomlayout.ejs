@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SWETING-AI</title>
+    <link rel="icon" href="/images/favicon.svg">
+    <link rel="icon" href="/images/ckass/list.png">
+    <link rel="stylesheet" href="/stylesheets/sidebar.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/fonts/NotoSansCJKkr-Medium.otf">
+    <style>
+
+
+    .navbar {
+      padding-right: 24px;
+      padding-left: 5px;
+    }
+
+        .top-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            margin: 0;
+            outline: none;
+            border: none;
+            color: #242e64;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            cursor: pointer;
+            opacity: 1;
+            margin-top: 10px;
+            margin-left: 13px;
+            margin-right: 13px;
+        }
+
+        .logo {
+            margin-bottom: 14px;
+            opacity: 1;
+        }
+
+
+        @media screen and (min-width:1200px){
+      .select-wrap {
+         display: flex;
+         align-items: center;
+         border-left: 1px solid #dcdfee;
+         padding: 0 0 0 12px;
+         height: 32px;
+         margin-left: 24px;
+      }
+      }
+
+
+      @media screen and (max-width:1199px){
+      .select-wrap {
+         display: none;
+      }
+      }
+
+        .select-wrap>a {
+            margin-right: 14px;
+            color: #7B81A2;
+            margin-left: 24px;
+            opacity: 1;
+            letter-spacing: 0px;
+            font-family: 'Noto Sans CJK KR Regular', sans-serif;
+            font-size: 18px;
+            margin-top: 2px;
+        }
+        .float-right {
+            display: flex;
+            margin-left: auto;
+            padding: 0 0 0 24px;
+
+        }
+
+        .float-right>a {
+            color: #7B81A2;
+            margin-left: 24px;
+            opacity: 1;
+            letter-spacing: 0px;
+            font-family: 'Noto Sans CJK KR Regular', sans-serif;
+            font-size: 18px;
+            margin-top: 7px;
+        }
+
+        @media screen and (max-width:820px) {
+            .search-box {
+                display: none;
+            }
+
+            .float-right>a {
+                display: none;
+            }
+
+            .logo {
+                display: none;
+            }
+
+        }
+
+        
+        @media screen and (max-width:820px){
+            .search-box{
+                display: none;
+
+            }
+            .float-right > a {
+                display: none;
+            }
+            .logo{
+                display:none;
+            }
+ 
+        }
+
+
+        @media screen and (min-width:821px){
+    .search-box {
+      width: 280px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+
+    }
+    }
+
+        .float-right > img {
+            margin-left: 24px;
+        }
+
+
+        .search-box>button {
+            margin: 0 4px;
+            padding: 4px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .form-control-nav {
+            width: 100%;
+            display: flex;
+            height: calc(1.5em + 0.75rem + 2px);
+            color: #394273;
+            padding: 0 40px 0 12px;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            background: #f5f6ff 0% 0% no-repeat padding-box;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .footer.dark {
+            margin-top: 48px;
+            background: #131830;
+            font-family: 'Noto Sans CJK KR Regular', sans-serif;
+            border-top: 1px solid #1b2246;
+            color: hsla(0, 0%, 100%, .6);
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            margin: 0 24px;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .linkBox {
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .addressbox>p {
+            font-family: 'Noto Sans CJK KR Regular', sans-serif;
+        }
+
+        .column>a {
+            font-family: 'Noto Sans CJK KR Regular', sans-serif;
+        }
+
+        .searchButton {
+            position: absolute;
+            top: 56%;
+            right: 256px;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            border-radius: 4px;
+            margin: 0 4px;
+            padding: 4px;
+            width: 30px;
+            height: 30px;
+            background-image: url(/images/searchglass.svg);
+            background-repeat: no-repeat;
+            }
+
+        .linkBox>a {
+            color: hsla(0, 0%, 100%, .6);
+            font-family: 'Noto Sans CJK KR Regular', sans-serif;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        .components>li>a {
+            color: #394273;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        .side-item>.list>.column>.link:before {
+            position: absolute;
+            left: 24px;
+            content: "";
+            background: #dcdfee;
+            width: 1px;
+            height: 100%;
+        }
+
+        .components>li {
+            margin-left: 12px;
+        }
+
+        .side-a {
+            color: gray;
+            border-left: 1px solid #dcdfee;
+            padding-left: 14px;
+            height: 54px;
+        }
+
+
+
+        .bg-wrapper {
+            z-index: 0;
+            position: absolute;
+            width: 100%;
+            height: auto;
+        }
+
+        .bg-wrapper>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .main-title {
+            font-size: 36px;
+            line-height: 48px;
+            margin: 80px 0 0;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .main-title>.accent {
+            font-size: 48px;
+            font-weight: 900;
+        }
+
+        .main-window>.main-icon {
+            margin: 0 auto;
+            display: block;
+        }
+
+        .sidebar-header>img {
+            margin-top: 22px;
+            padding-left: 24px;
+        }
+
+        .modal-login-header {
+            justify-content: space-between;
+            padding: 1rem 1rem;
+            border-top-left-radius: calc(0.3rem - 1px);
+            border-top-right-radius: calc(0.3rem - 1px);
+        }
+
+
+
+        .loginImage>img {
+            margin: 10px 0 12px;
+            width: 42px;
+            height: 28px;
+        }
+
+        h5 {
+            font-family: 'Noto Sans CJK KR Regular', sans-serif;
+            margin: 0 0 24px;
+            color: #242e64;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .button-primary {
+            background: #394dd1;
+            border-radius: 4px;
+            color: #fff;
+            margin: 24px 0 0;
+            width: 100%;
+            height: 48px;
+        }
+
+        .Joinheader {
+            margin-top: 30px;
+        }
+
+        .contentbackground {
+            margin-top: 72px;
+            padding: 0px 24px;
+
+        }
+
+        @media screen and (min-width:836px) {
+            .content {
+                display: flex;
+                justify-content: center;
+                margin: 0 auto;
+                max-width: 1200px;
+                width: calc(100% - 24px);
+
+            }
+        }
+
+
+
+
+
+        @media screen and (max-width: 835px) {
+            .content {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                margin: 0 auto;
+                max-width: 1200px;
+                width: calc(100% - 24px);
+
+            }
+        }
+
+
+
+
+        .swetinginfo {
+            width: 282px;
+            height: 460px;
+        }
+
+        .mysweting {
+            width: 116px;
+            height: 36px;
+            margin-left: 8px;
+            font: Bold 24px/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-900-242e64-primary-title2-body3);
+            text-align: left;
+            font: Bold 24px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #242E64;
+            opacity: 1;
+            font-size: 21px;
+        }
+
+        .maininfo {
+            width: 282px;
+            height: 196px;
+            margin-top: 8px;
+            padding: 8px;
+
+            margin-bottom: 24px;
+        }
+
+        .banner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 15px 16px;
+            justify-content: space-between;
+            width: 266px;
+            height: 48px;
+            background: var(--gi-20-f5f6ff-bg-light) 0% 0% no-repeat padding-box;
+            background: #F5F6FF 0% 0% no-repeat padding-box;
+            border-radius: 4px;
+            opacity: 1;
+            margin-bottom: 8px;
+        }
+
+        .who {
+            width: 59px;
+            height: 24px;
+            font: Bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-700-4f5783-icon-title1-body2);
+            text-align: left;
+            font: Bold 16px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #4F5783;
+            opacity: 1;
+        }
+
+        .whoexplain {
+            width: auto;
+            height: 18px;
+            font: Regular var(--unnamed-font-size-12)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-700-4f5783-icon-title1-body2);
+            text-align: right;
+            font: Regular 12px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #4F5783;
+            opacity: 1;
+            font-size: 10px;
+        }
+
+        .swetee .banner {
+            background: var(--pk-s-300-db5998) 0% 0% no-repeat padding-box;
+            background: #DB5998 0% 0% no-repeat padding-box;
+            border-radius: 4px;
+            opacity: 1;
+        }
+
+        .swetee .who {
+            color: #FFFFFF;
+            opacity: 1;
+        }
+
+        .swetee .whoexplain {
+            color: var(--gi-00-ffffff);
+            color: #FFFFFF;
+        }
+
+        .plan {
+            padding: 8px;
+
+        }
+
+        .classtotal {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .classplanimg {
+            width: 12px;
+            height: 14px;
+            margin: 3px 4px;
+        }
+
+        .classtotalnumber {
+            font: Regular var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-700-4f5783-icon-title1-body2);
+            text-align: left;
+            font: Regular 14px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #4F5783;
+            opacity: 1;
+            font-size: 10px;
+            margin-left: 2px
+        }
+
+        .classplaninfo {
+            display: flex;
+            justify-content: flex-start;
+            font: Medium var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-700-4f5783-icon-title1-body2);
+            text-align: left;
+            font: Medium 16px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #4F5783;
+            opacity: 1;
+            font-size: 13px;
+            margin-top: 2px;
+
+        }
+
+
+
+
+
+        .ongoingsweting {
+            padding: 8px;
+        }
+
+        .ongoingtotal {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .ongoingimg {
+            width: 12px;
+            height: 16px;
+            margin: 3px 4px;
+        }
+
+        .ongoingnumber {
+            font: Regular var(--unnamed-font-size-14)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-700-4f5783-icon-title1-body2);
+            text-align: left;
+            font: Regular 14px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #4F5783;
+            opacity: 1;
+            font-size: 10px;
+            margin-left: 2px;
+
+        }
+
+        .ongoinginfo {
+            display: flex;
+            justify-content: flex-start;
+            font: Medium var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-700-4f5783-icon-title1-body2);
+            text-align: left;
+            font: Medium 16px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #4F5783;
+            opacity: 1;
+            font-size: 13px;
+            margin-top: 2px;
+        }
+
+        .swetee .ongoingnumber {
+            color: #D63381;
+            opacity: 1;
+        }
+
+        .swetee .ongoinginfo {
+            color: #D63381;
+        }
+
+
+
+        .swetingroombackground {
+            height: auto;
+            margin-left: 12px;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 36px;
+            margin-left: 12px;
+        }
+
+        .classplan {
+            width: 88px;
+            font: Regular 24px/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-600-656c92-body1);
+            text-align: left;
+            font: Regular 24px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #656C92;
+            opacity: 1;
+            font-size: 20px;
+            margin-right: 24px;
+        }
+
+        .swetingroom {
+            width: 88px;
+            font: Bold 24px/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-900-242e64-primary-title2-body3);
+            text-align: left;
+            font: Bold 24px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #242E64;
+            opacity: 1;
+            font-size: 20px;
+        }
+
+        .swetingroombackground>hr {
+            margin: 0px;
+            margin-top: 8px;
+        }
+
+        .explain {
+            font: Regular var(--unnamed-font-size-12)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-500-7b81a2);
+            text-align: left;
+            font: Regular 12px/20px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #7B81A2;
+            opacity: 1;
+            margin: 24px 0px 24px 12px;
+        }
+
+        .classstatus {
+            height: 48px;
+            margin-left: 12px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .button {
+            width: 74px;
+            height: 48px;
+            border: 0px;
+            text-align: center;
+            margin-right: 16px;
+            background: var(--gi-00-ffffff) 0% 0% no-repeat padding-box;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            border-radius: 4px;
+            opacity: 1;
+            font: Regular var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-500-7b81a2);
+            text-align: left;
+            font: Regular 16px/24px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #7B81A2;
+            opacity: 1;
+
+        }
+
+        .myclass {
+            position: relative;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            height: auto;
+            max-width: 100%;
+
+        }
+
+        @media screen and (min-width:901px) {
+            .class {
+                position: relative;
+                width: calc(47% - 12px);
+                height: 128px;
+
+                max-width: 422px;
+                margin: 12px;
+                padding: 24px;
+                background: var(--gi-00-ffffff) 0% 0% no-repeat padding-box;
+                background: #FFFFFF 0% 0% no-repeat padding-box;
+                box-shadow: 0px 1px 4px #1B224633;
+                border-radius: 4px;
+                opacity: 1;
+            }
+        }
+
+        @media screen and (max-width:900px) and (min-width:601px) {
+            .class {
+                position: relative;
+                width: calc(100% - 12px);
+                height: 128px;
+                margin: 12px;
+                min-width: 230px;
+                padding: 24px;
+                background: var(--gi-00-ffffff) 0% 0% no-repeat padding-box;
+                background: #FFFFFF 0% 0% no-repeat padding-box;
+                box-shadow: 0px 1px 4px #1B224633;
+                border-radius: 4px;
+                opacity: 1;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .class {
+                position: relative;
+                width: calc(100% - 12px);
+                height: 128px;
+                min-width: 260px;
+                margin: 12px;
+                padding: 24px;
+                background: var(--gi-00-ffffff) 0% 0% no-repeat padding-box;
+                background: #FFFFFF 0% 0% no-repeat padding-box;
+                box-shadow: 0px 1px 4px #1B224633;
+                border-radius: 4px;
+                opacity: 1;
+            }
+        }
+
+        .roomname {
+            width: 77px;
+            height: 24px;
+            font: Bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-900-242e64-primary-title2-body3);
+            text-align: left;
+            font: Bold 16px/24px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #242E64;
+            opacity: 1;
+            font-size: 15px;
+        }
+
+        .swetorname {
+            width: 64px;
+            height: 20px;
+            margin-top: 8px;
+            font: Medium var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-900-242e64-primary-title2-body3);
+            text-align: left;
+            font: Medium 14px/24px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #242E64;
+            opacity: 1;
+            font-size: 11px;
+
+        }
+
+        .nameandstatus {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+        }
+
+        .ongoingstatus {
+            display: flex;
+            align-items: center;
+        }
+
+        .matchstatus {
+            display: flex;
+
+        }
+
+        .percent {
+            font: Bold var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--bl-s-500-394dd1-★);
+            text-align: right;
+            font: Bold 11px/24px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #D63381;
+
+        }
+
+        .ongoinggraph {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+        }
+
+        .incomingandrecentclass {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font: Regular var(--unnamed-font-size-14)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-noto-sans-cjk-kr);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gi-500-7b81a2);
+            text-align: left;
+            font: Regular 14px/24px Noto Sans CJK KR;
+            letter-spacing: 0px;
+            color: #7B81A2;
+            opacity: 1;
+            font-size: 11px;
+        }
+
+        .incoming {
+            display: flex;
+        }
+
+        .recentclass {
+            display: flex;
+        }
+    </style>
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="float-left">
+            <button class="top-button" id="sidebarCollapse">
+                <svg width="24" height="24" viewBox="0 0 24 24" class="icon side">
+                    <rect width="24" height="24" rx="4" fill="none"></rect>
+                    <g transform="translate(-82 -375)">
+                        <rect width="18" height="2" rx="1" transform="translate(85 380)" fill="#394dd1"></rect>
+                        <rect width="18" height="2" rx="1" transform="translate(85 386)" fill="#394dd1"></rect>
+                        <rect width="18" height="2" rx="1" transform="translate(85 392)" fill="#394dd1"></rect>
+                    </g>
+                </svg>
+            </button>
+            <a href="">
+                <img class="logo" src="/images/title_logo.png" alt="">
+            </a>
+        </div>
+        <div class=" select-wrap float-left">
+            <a href="/profile">스웨터</a>
+            <a href="/classplan">수업계획</a>
+            <a href="">AI진단</a>
+        </div>
+        <div class="float-right">
+            <div class="search-box">
+                <input type="text" class="form-control-nav" type="search" placeholder="나에게 맞는 스웨터는 누굴까?">
+                <input type="button" class="searchButton" name="search">
+            </div>
+            <a href="#" data-toggle="modal" data-target="#LoginModalCenter">로그인</a>
+            <a href="#" data-toggle="modal" data-target="#JoinModalCenter">회원가입</a>
+            <img src="/images/default_logo.svg">
+        </div>
+    </nav>
+</header>
+
+<body>
+    <nav id="sidebar">
+        <div id="dismiss">
+            <img src="/images/closebox.svg" lt="" srcset="">
+        </div>
+
+        <div class="sidebar-header">
+            <img src="/images/title_logo.png">
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="/">스웨터</a>
+            </li>
+            <li>
+                <a href="/">수업계획</a>
+            </li>
+            <li>
+                <a href="/">AI진단</a>
+            </li>
+            <li>
+                <a href="/">마이페이지</a>
+            </li>
+            <div class="list sub-item">
+                <div class="column" style="margin-top:15px;">
+                    <a class="side-a" href="#">나의 스웨팅</a>
+                    <a class="side-a" href="#">나의 정보관리</a>
+                    <a class="side-a" href="#">팔로워</a>
+                    <a class="side-a" href="#">북마크</a>
+                    <a class="side-a" href="#">1:1 문의</a>
+                </div>
+            </div>
+        </ul>
+    </nav>
+    <div class="main-window">
+        <%- body %>
+    </div>
+</body>
+
+<!-- Modal Login -->
+<div class="modal fade" id="LoginModalCenter" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-login-header">
+                <div class="text-center loginImage">
+                    <img src="/images/robotlogo.svg" alt="">
+                </div>
+                <h5 class="modal-title text-center" id="exampleModalLongTitle">로그인</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <form class="form-signin">
+                        <div class="form-label-group">
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                                required="" autofocus="">
+                        </div>
+                        <div class="form-label-group" style="margin-top: 30px; margin-bottom:30px">
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                                required="">
+                        </div>
+                        <button class="button-primary" type="submit">로그인하기</button>
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" value="remember-me"> 자동로그인
+                            </label>
+                        </div>
+                    </form>
+                    <div class="float-left">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">카카오톡 간편 로그인</button>
+                    </div>
+                    <div class="float-right">
+                        <button type="button" class="btn btn-primary">페이스북 간편 로그인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal join -->
+<div class="modal fade" id="JoinModalCenter" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-login-header">
+                <div class="text-center Joinheader">
+                    <img src="/images/Join/title.svg" alt="" style="width: 50%;">
+                    <h3 class="Joinheader">SWETING</h3>
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <button class="button-primary" id="joinform">이메일로 시작하기</button>
+                    <button class="button-primary" type="submit">카카오톡으로 시작하기</button>
+                    <button class="button-primary" type="submit">페이스북으로 시작하기</button>
+                    <button class="button-primary" data-toggle="modal" data-target="#LoginModalCenter"
+                        data-dismiss="modal">로그인하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer dark">
+   <div class="container">
+      <div class="column">
+         <div class="linkBox float-left">
+            <a target="_blank" class="link" href="https://www.codingrobotlab.com">회사소개</a>
+            <a target="_blank" class="link" href="/policy/terms">이용약관</a>
+            <a target="_blank" class="link" href="/policy/privacy">개인정보 처리방침</a>
+            <a target="_blank" class="link" href="mailto:contact@sweting.ai">고객문의</a>
+         </div>
+         <div class="addressbox float-left">
+            <p class="info">법인상호명: (주)코딩로봇연구소 | 대표이사: 최영준</p>
+            <p class="info">주소: 서울시 강남구 테헤란로55길 21, 401호 | 고객지원: 02-2039-9355</p>
+            <p class="info">통신 판매신고번호 제 2020-서울강남-02380 호 | 사업자등록번호 439-87-00757</p>
+            <div class="row" style="margin-left: 1px; margin-bottom: 50px;">
+               <p class="info">Copyright(c) 2020. sweting.ai. All rights reserved</p>
+               <div class="float-right">
+                  <a target="_blank" class="link" href="https://www.facebook.com/codingrobotlab"
+                     style="margin-top:0px">페이스북</a>
+                  <span> |</span>
+                  <a target="_blank" class="link" href="http://calmsw.com" style="margin-top:0px">CALMS</a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.bundle.min.js"></script>
+<script src="/javascripts/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#dismiss, .overlay').on('click', function () {
+            $('#sidebar').removeClass('active');
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').addClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+
+        $("#joinform").click(function () {
+            location.replace('/joinform');
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,219 @@
+<div class="content">
+    <div class="contenttitle"><button class="maintitle" id="jointitle1">프로필정보</button><button class="maintitle"
+            id="jointitle2">스웨팅 정보</button><button class="maintitle" id="jointitle3">회원가입 정보</button></div>
+
+    <div class="formbackground"></div>
+    <form class="formcontent" id="form1" action="/user/join" method="POST">
+        <div class="title">기본정보</div>
+        <div class="form-group">
+            <div class="introducetext"><label class="label-name">프로필사진(선택)</label>
+                <div class="label-name" id="textnum">0/80</div>
+            </div>
+            <div class="profilebackground">
+                <div class="profileimgbackground">
+                    <div id="profileimg"></div>
+                    <div class="editimgbackground"><img class="editimg" src="/images/class/editcolor.png"></div>
+                </div>
+                <div id="profileinfo">
+                    <div id="swetorname">코딩닥터효섭</div>
+                    <div id="swetorlevel">중급개발자</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label-name">자기소개</label>
+            <input type="text" name="introducemyself" class="form-control" id="introducemyself"
+                placeholder="자기소개를 입력하세요.">
+        </div>
+        <div class="form-group">
+            <label class="label-name">전공 분야</label>
+            <div class="editbackground form-control">
+                <input type="text" id="major" name="major" class="editinput" placeholder="예) Python">
+                <img class="editimg" src="/images/class/editcolor.png">
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="label-name">개발 분야</label>
+            <div class="editbackground form-control">
+                <input type="text" name="programming" id="programming" class="editinput" aria-describedby="emailHelp"
+                    placeholder="예) 프론트 개발, 백엔드 개발">
+                <img class="editimg" src="/images/class/editcolor.png">
+            </div>
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+            <label class="label-name">주요 업종</label>
+            <div class="editbackground form-control fieldbackground">
+            <input type="text" class="editinput" id="field" placeholder="예) 금융, 부동산">
+            <img class="editimg" src="/images/class/plus.png">
+            </div>
+        </div>
+
+        <div class="label-name">학력</div>
+        <select class="form-control" id="inputBirth">
+            <option>대졸</option>
+            <option>고졸</option>
+
+
+        </select>
+        <div class="label-name">생년월일</div>
+        <select class="form-control" id="inputBirth">
+            <option>1월</option>
+            <option>2월</option>
+            <option>3월</option>
+            <option>4월</option>
+            <option>5월</option>
+            <option>6월</option>
+            <option>7월</option>
+            <option>8월</option>
+            <option>9월</option>
+            <option>10월</option>
+            <option>11월</option>
+            <option>12월</option>
+
+        </select>
+        <div class="form-group">
+            <label class="label-name">성별</label>
+            <div class="row">
+                <div class="form-check" id="checkboxsex">
+                    <input class="form-check-input" type="radio" name="sex" id="sex" value="female">
+                    <label class="form-check-label" for="sex">
+                        여성
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sex" id="sex" value="male">
+                    <label class="form-check-label" for="sex">
+                        남성
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label-name">휴대폰</label>
+            <div class="row" id="inputphonenum">
+                <input type="text" name="phonenum" class="form-control-half" id="phonenum" placeholder="010-1111-1111">
+                <button class="sendandconfirmbutton">인증번호 발송</button>
+            </div>
+            <div class="row">
+                <input type="text" class="form-control-half" id="confirmnum" placeholder="인증번호">
+                <button class="sendandconfirmbutton">인증받기</button>
+            </div>
+        </div>
+
+        <button class="joinbutton" type="submit">회원 가입하기</button>
+    </form>
+
+
+
+
+
+
+
+
+    <form class="formcontent" id="form2" action="/user/join" method="POST">
+
+
+
+
+
+        <div class="title">스웨팅 정보</div>
+        <div class="form-group">
+            <label class="label-name">수업가능 시간</label>
+            <div class="editbackground form-control">
+            <input type="text"  name="classtime" class="editinput" id="classtime" aria-describedby="emailHelp"
+                placeholder="ex) coderlee@codingrobotlab.com">
+                <img class="editimg" src="/images/class/editcolor.png">
+                </div>
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+            <label class="label-name">원하는 수업 장소</label>
+            <div class="editbackground form-control">
+            <input type="text" name="location" class="editinput" id="location" placeholder="숫자 + 영문 6자 이상">
+            <img class="editimg" src="/images/class/editcolor.png">
+            </div>
+        
+        </div>
+        <div class="form-group">
+            <label class="label-name">스웨티에게 어필할 키워드</label>
+            <div class="editbackground form-control">
+
+            <input type="text" class="editinput" id="swetorkeyword" placeholder="숫자 + 영문 6자 이상">
+            <img class="editimg" src="/images/class/editcolor.png">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="label-name">원하는 스웨터 성별</label>
+            <div class="row">
+                <div class="form-check" id="checkboxsex">
+                    <input class="form-check-input" type="radio" name="sex" id="sex" value="female">
+                    <label class="form-check-label" for="sex">
+                        여성
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sex" id="sex" value="male">
+                    <label class="form-check-label" for="sex">
+                        남성
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="swetorinfoeditbutton">
+            <button id="cancelbutton" type="submit">취소</button>
+            <button id="editbutton" type="submit">수정</button>
+        </div>
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+    <form class="formcontent" id="form3" action="/user/join" method="POST">
+        <div class="title">가입정보 변경</div>
+        <div class="idemail"><span>아이디(이메일)</span><span id="useremail">abcdwe@gmail.com</span></div>
+        <div class="form-group">
+            <label class="label-name">이름</label>
+            <input type="email" name="name" class="form-control" id="username" aria-describedby="emailHelp"
+                placeholder="중복되지 않는 닉네임을 입력해 주세요 (2글자 이상 8글자 이하)">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="title">비밀번호 변경</div>
+        <div class="form-group">
+            <label class="label-name">기존 비밀번호</label>
+            <input type="password" name="password" class="form-control" id="userpassword" placeholder="숫자 + 영문 6자 이상">
+        </div>
+        <div class="form-group">
+            <label class="label-name">새 비밀번호</label>
+            <input type="password" name="newpassword" class="form-control" id="usernewpassword"
+                placeholder="숫자 + 영문 6자 이상">
+        </div>
+        <div class="form-group">
+            <label class="label-name">비밀번호 확인</label>
+            <input type="password" name="newpasswordcheck" class="form-control" id="usernewpasswordcheck"
+                placeholder="숫자 + 영문 6자 이상">
+        </div>
+        <button class="joinbutton" id="savebutton" type="submit">저장</button>
+
+
+
+
+    </form>
+</div>
